@@ -9,19 +9,20 @@ import UIKit
 
 class FavoritesTableViewCell: UITableViewCell {
 
-    var collectionView = UICollectionView()
+    lazy var collectionView = UICollectionView()
     var favoritesDataSource = [SettingsFavoritesModel]()
 
     override class func awakeFromNib() {
         super.awakeFromNib()
-        self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        self.collectionView.delegate = self
     }
     
     func setup(with model: [SettingsFavoritesModel]) {
         self.favoritesDataSource = model
         self.collectionView.reloadData()
     }
+    
 }
 
 extension FavoritesTableViewCell: UICollectionViewDataSource {
