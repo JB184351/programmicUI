@@ -9,15 +9,14 @@ import UIKit
 
 class SleepSettingsTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var settingsLabel = UILabel()
+    var detailSettingsLabel = UILabel()
+    var statusLabel = UILabel()
+    
+    func setup(with model: SettingsModel) {
+        settingsLabel.text = model.setting
+        detailSettingsLabel.text = model.settingDetails
+        statusLabel.text = model.settingStatus! + " >"
     }
 
 }

@@ -9,15 +9,37 @@ import UIKit
 
 class FavoritesTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
+    var collectionView = UICollectionView()
+    var favoritesDataSource = [SettingsFavoritesModel]()
+
+    override class func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func setup(with model: [SettingsFavoritesModel]) {
+        self.favoritesDataSource = model
+        self.collectionView.reloadData()
     }
+}
 
+extension FavoritesTableViewCell: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return favoritesDataSource.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+    
+    
+}
+
+extension FavoritesTableViewCell: UICollectionViewDelegate {
+    
+}
+
+extension FavoritesTableViewCell: UICollectionViewDelegateFlowLayout {
+    
 }

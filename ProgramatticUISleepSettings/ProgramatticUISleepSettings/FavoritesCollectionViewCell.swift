@@ -9,4 +9,9 @@ import UIKit
 
 class FavoritesCollectionViewCell: UICollectionViewCell {
     
+    var favoritesLabel = UILabel()
+    
+    func setup(with model: SettingsFavoritesModel) {
+        favoritesLabel.text = model.title
+    }
 }
