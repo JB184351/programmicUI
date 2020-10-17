@@ -52,9 +52,9 @@
 		302559802534961900D5EE57 /* SettingTableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				3025597A253495EC00D5EE57 /* SleepSettingsTableViewCell.swift */,
 				302559742534931200D5EE57 /* SwitchSettingsTableViewCell.swift */,
 				30255977253495DA00D5EE57 /* FavoritesTableViewCell.swift */,
-				3025597A253495EC00D5EE57 /* SleepSettingsTableViewCell.swift */,
 			);
 			path = SettingTableViewCells;
 			sourceTree = "<group>";
