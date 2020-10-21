@@ -12,7 +12,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
     var settingsLabel = UILabel()
     var detailSettingsLabel = UILabel()
     var settingsSwitch = UISwitch()
-    var mainStackView = UIStackView()
+    var mainSettingsStackView = UIStackView()
     var detailStackView = UIStackView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -30,47 +30,36 @@ class SwitchSettingsTableViewCell: UITableViewCell {
     }
     
     func setupUI() {
-        self.contentView.backgroundColor = .systemBlue
-     
-        mainStackView.translatesAutoresizingMaskIntoConstraints = false
-        detailStackView.translatesAutoresizingMaskIntoConstraints = false
+        self.contentView.backgroundColor = UIColor(red: 17/255, green: 22/255, blue: 38/255, alpha: 1)
         
-        configureSettingsLabel()
-        configureDetailSettingsLabel()
+        detailStackView.translatesAutoresizingMaskIntoConstraints = false
         
         configureMainSettingStackView()
         configureDetailSettingStackView()
+    }
+    
+    func configureMainSettingStackView() {
         
-    }
-    
-    func configureSettingsLabel() {
-        settingsLabel.textColor = .black
+        mainSettingsStackView.axis = .horizontal
+        mainSettingsStackView.alignment = .fill
+        mainSettingsStackView.distribution = .equalCentering
+        mainSettingsStackView.spacing = 0.0
+        mainSettingsStackView.contentMode = .scaleToFill
+        
+        settingsLabel.textColor = .white
         settingsLabel.font = .systemFont(ofSize: 17.0)
-    }
-    
-    func configureDetailSettingsLabel() {
+        
         detailSettingsLabel.textColor = .white
         detailSettingsLabel.alpha = 0.5
         detailSettingsLabel.font = .systemFont(ofSize: 12.0)
         detailSettingsLabel.numberOfLines = 0
-    }
-    
-    func configureMainSettingStackView() {
-        self.addSubview(mainStackView)
         
-        mainStackView.axis = .horizontal
-        mainStackView.alignment = .fill
-        mainStackView.distribution = .equalCentering
-        mainStackView.spacing = 0.0
-        mainStackView.contentMode = .scaleToFill
-        
-        
-        mainStackView.addArrangedSubview(settingsLabel)
-        mainStackView.addArrangedSubview(settingsSwitch)
+        mainSettingsStackView.addArrangedSubview(settingsLabel)
+        mainSettingsStackView.addArrangedSubview(settingsSwitch)
     }
     
     func configureDetailSettingStackView() {
-        self.addSubview(detailStackView)
+        self.contentView.addSubview(detailStackView)
         
         detailStackView.axis = .vertical
         detailStackView.alignment = .fill
@@ -78,7 +67,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
         detailStackView.spacing = 0.0
         detailStackView.contentMode = .scaleToFill
   
-        detailStackView.addArrangedSubview(mainStackView)
+        detailStackView.addArrangedSubview(mainSettingsStackView)
         detailStackView.addArrangedSubview(detailSettingsLabel)
         setupConstraintsForDetailStackView()
     }
@@ -87,7 +76,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
         detailStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
         detailStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         detailStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true
-        detailStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 20).isActive = true
+        detailStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
     }
 
 }

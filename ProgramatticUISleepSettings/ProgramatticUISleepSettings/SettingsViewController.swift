@@ -100,7 +100,7 @@ class SettingsViewController: UIViewController {
             print("Voice fade out settings")
         }
         
-        let musicWakeup = SettingsModel(setting: "Music wakeup section", settingDetails: "sequence that plays at the end of a session and gently brings you back from sleep \n Note: the wakeup section won't play for seesion less than ten minutes", settingStatus: nil, cellType: .button) {
+        let musicWakeup = SettingsModel(setting: "Music wakeup section", settingDetails: "Sequence that plays at the end of a session and gently brings you back from sleep Note: the wakeup section won't play for seesion less than ten minutes", settingStatus: nil, cellType: .button) {
             print("Music Wakeup Section")
         }
         
@@ -164,9 +164,9 @@ extension SettingsViewController: UITableViewDataSource {
         
         switch setting!.cellType {
         case .button:
-//            let buttonTypeCell = tableView.dequeueReusableCell(withIdentifier: "switchCell", for: indexPath) as! SwitchSettingsTableViewCell
-//            buttonTypeCell.setup(with: setting!)
-            return UITableViewCell()
+            let buttonTypeCell = tableView.dequeueReusableCell(withIdentifier: "switchCell", for: indexPath) as! SwitchSettingsTableViewCell
+            buttonTypeCell.setup(with: setting!)
+            return buttonTypeCell
         case .label:
             let settingsCell = tableView.dequeueReusableCell(withIdentifier: "sleepCell", for: indexPath) as! SleepSettingsTableViewCell
             settingsCell.setup(with: setting!)
