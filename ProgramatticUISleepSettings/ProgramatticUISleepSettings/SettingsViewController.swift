@@ -17,8 +17,11 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        view.backgroundColor = .white
+        
+        view.backgroundColor = UIColor(red: 17/255, green: 22/255, blue: 38/255, alpha: 1)
+        
         self.tableView.rowHeight = UITableView.automaticDimension
+        
         registerCells()
         setupUI()
         setupConstraints()
@@ -34,6 +37,7 @@ class SettingsViewController: UIViewController {
         
         sleepLabel.text = "Sleep Settings"
         sleepLabel.textAlignment = .center
+        sleepLabel.textColor = .white
     }
     
     func setupConstraints() {
@@ -160,9 +164,9 @@ extension SettingsViewController: UITableViewDataSource {
         
         switch setting!.cellType {
         case .button:
-            let buttonTypeCell = tableView.dequeueReusableCell(withIdentifier: "switchCell", for: indexPath) as! SwitchSettingsTableViewCell
-            buttonTypeCell.setup(with: setting!)
-            return buttonTypeCell
+//            let buttonTypeCell = tableView.dequeueReusableCell(withIdentifier: "switchCell", for: indexPath) as! SwitchSettingsTableViewCell
+//            buttonTypeCell.setup(with: setting!)
+            return UITableViewCell()
         case .label:
             let settingsCell = tableView.dequeueReusableCell(withIdentifier: "sleepCell", for: indexPath) as! SleepSettingsTableViewCell
             settingsCell.setup(with: setting!)

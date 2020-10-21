@@ -12,7 +12,7 @@ class SleepSettingsTableViewCell: UITableViewCell {
     var settingsLabel = UILabel()
     var detailSettingsLabel = UILabel()
     var statusLabel = UILabel()
-    var mainStackView = UIStackView()
+    var mainSettingsStackView = UIStackView()
     var detailStackView = UIStackView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -31,68 +31,58 @@ class SleepSettingsTableViewCell: UITableViewCell {
     }
     
     func setupUI() {
-        self.contentView.backgroundColor = .systemBlue
+        contentView.backgroundColor = UIColor(red: 17/255, green: 22/255, blue: 38/255, alpha: 1)
         
-        mainStackView.translatesAutoresizingMaskIntoConstraints = false
         detailStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        configureSettingsLabel()
-        configureDetailSettingsLabel()
-        configureStatusLabel()
-        configureMainSettingStackView()
-        configureDetailSettingStackView()
-    }
-    
-    func configureSettingsLabel() {
-        settingsLabel.textColor = .black
-        settingsLabel.font = .systemFont(ofSize: 17.0)
-    }
-    
-    func configureDetailSettingsLabel() {
-        detailSettingsLabel.textColor = .white
-        detailSettingsLabel.alpha = 0.5
-        detailSettingsLabel.font = .systemFont(ofSize: 12.0)
-        detailSettingsLabel.numberOfLines = 0
-    }
-    
-    func configureStatusLabel() {
-        statusLabel.textColor = .black
-        statusLabel.font = .systemFont(ofSize: 17.0)
-    }
-    
-    func configureMainSettingStackView() {
-        self.addSubview(mainStackView)
+        contentView.addSubview(detailStackView)
         
-        mainStackView.axis = .horizontal
-        mainStackView.alignment = .fill
-        mainStackView.distribution = .equalCentering
-        mainStackView.spacing = 0.0
-        mainStackView.contentMode = .scaleToFill
-        
-        configureSettingsLabel()
-        
-        mainStackView.addArrangedSubview(settingsLabel)
-        mainStackView.addArrangedSubview(statusLabel)
+        setupMainSettingsStackView()
+        setupDetailStackView()
+        addDetailStackViewConstraints()
     }
     
-    func configureDetailSettingStackView() {
-        self.addSubview(detailStackView)
-        
+    func setupDetailStackView() {
         detailStackView.axis = .vertical
         detailStackView.alignment = .fill
         detailStackView.distribution = .fill
         detailStackView.spacing = 0.0
         detailStackView.contentMode = .scaleToFill
         
+        detailSettingsLabel.textColor = .white
+        detailSettingsLabel.alpha = 0.5
+        detailSettingsLabel.font = .systemFont(ofSize: 12)
+        
         detailStackView.addArrangedSubview(detailSettingsLabel)
-        detailStackView.addArrangedSubview(mainStackView)
-        setupConstraintsForDetailStackView()
     }
     
-    func setupConstraintsForDetailStackView() {
-        detailStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
+    
+    func addDetailStackViewConstraints() {
         detailStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         detailStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true
-        detailStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 20).isActive = true
+        detailStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
+        detailStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
     }
+    
+    func setupMainSettingsStackView() {
+        mainSettingsStackView.axis = .horizontal
+        mainSettingsStackView.alignment = .fill
+        mainSettingsStackView.distribution = .equalCentering
+        mainSettingsStackView.spacing = 0.0
+        mainSettingsStackView.contentMode = .scaleToFill
+        
+        mainSettingsStackView.addArrangedSubview(settingsLabel)
+        mainSettingsStackView.addArrangedSubview(statusLabel)
+        
+        settingsLabel.textColor = .white
+        settingsLabel.font = .systemFont(ofSize: 17.0)
+        
+        statusLabel.textColor = UIColor(red: 194/255, green: 171/255, blue: 111/255, alpha: 1)
+        statusLabel.font = .systemFont(ofSize: 16.0)
+        
+        
+        detailStackView.addArrangedSubview(mainSettingsStackView)
+    }
+    
+    
 }
