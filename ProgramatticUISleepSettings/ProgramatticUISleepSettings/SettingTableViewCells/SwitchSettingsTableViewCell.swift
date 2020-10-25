@@ -54,6 +54,9 @@ class SwitchSettingsTableViewCell: UITableViewCell {
         detailSettingsLabel.font = .systemFont(ofSize: 12.0)
         detailSettingsLabel.numberOfLines = 0
         
+        settingsSwitch.onTintColor = UIColor(red: 194/255, green: 171/255, blue: 111/255, alpha: 1)
+        settingsSwitch.tintColor = UIColor(red: 194/255, green: 171/255, blue: 111/255, alpha: 1)
+        
         mainSettingsStackView.addArrangedSubview(settingsLabel)
         mainSettingsStackView.addArrangedSubview(settingsSwitch)
     }

@@ -19,6 +19,7 @@ class SettingsViewController: UIViewController {
         tableView.delegate = self
         
         view.backgroundColor = UIColor(red: 17/255, green: 22/255, blue: 38/255, alpha: 1)
+        tableView.backgroundColor = UIColor(red: 17/255, green: 22/255, blue: 38/255, alpha: 1)
         
         self.tableView.rowHeight = UITableView.automaticDimension
         
@@ -55,6 +56,8 @@ class SettingsViewController: UIViewController {
     func registerCells() {
         tableView.register(SwitchSettingsTableViewCell.self, forCellReuseIdentifier: "switchCell")
         tableView.register(SleepSettingsTableViewCell.self, forCellReuseIdentifier: "sleepCell")
+        tableView.register(FavoritesTableViewCell.self, forCellReuseIdentifier: "favoritesCell")
+        tableView.register(SectionHeaderTableViewCell.self, forCellReuseIdentifier: "sectionCell")
     }
     
     func createSettingObjects() {
@@ -159,7 +162,9 @@ extension SettingsViewController: UITableViewDataSource {
         let setting = settingsDataSource[indexPath.section][indexPath.row] as? SettingsModel
         
         if indexPath.section == 0 {
-            return UITableViewCell()
+            let favoritesCell = tableView.dequeueReusableCell(withIdentifier: "favoritesCell", for: indexPath) as! FavoritesTableViewCell
+            favoritesCell.setup(with: settingsDataSource[indexPath.section] as! [SettingsFavoritesModel])
+            return favoritesCell
         }
         
         switch setting!.cellType {
@@ -178,6 +183,42 @@ extension SettingsViewController: UITableViewDataSource {
 }
 
 extension SettingsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let setting = settingsDataSource[indexPath.section][indexPath.row] as! SettingsModel
+        let selectedSetting = setting.action
+        selectedSetting()
+    }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section {
+        case 1:
+            let sectionHeaderCell = tableView.dequeueReusableCell(withIdentifier: "sectionCell") as! SectionHeaderTableViewCell
+            sectionHeaderCell.sectionHeaderLabel.text = "Alarm Settings"
+            return sectionHeaderCell
+        case 2:
+            let sectionHeaderCell = tableView.dequeueReusableCell(withIdentifier: "sectionCell") as! SectionHeaderTableViewCell
+            sectionHeaderCell.sectionHeaderLabel.text = "Sleep Settings"
+            return sectionHeaderCell
+        case 3:
+            let sectionHeaderCell = tableView.dequeueReusableCell(withIdentifier: "sectionCell") as! SectionHeaderTableViewCell
+            sectionHeaderCell.sectionHeaderLabel.text = "General Settings"
+            return sectionHeaderCell
+        default:
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return 0.0
+        default:
+            return 50.0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 }
 

@@ -14,6 +14,8 @@
 		302559822534966500D5EE57 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302559812534966500D5EE57 /* SettingsModel.swift */; };
 		30255986253496A900D5EE57 /* SettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30255985253496A900D5EE57 /* SettingsProtocol.swift */; };
 		30255989253496CE00D5EE57 /* SettingsFavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30255988253496CE00D5EE57 /* SettingsFavoritesModel.swift */; };
+		303EF5F72544823100F68C29 /* SectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303EF5F62544823100F68C29 /* SectionHeaderTableViewCell.swift */; };
+		307CD1722541BE260095C660 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307CD1712541BE260095C660 /* Extensions.swift */; };
 		308906CC2532354900F5A643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308906CB2532354900F5A643 /* AppDelegate.swift */; };
 		308906CE2532354900F5A643 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308906CD2532354900F5A643 /* SceneDelegate.swift */; };
 		308906D02532354900F5A643 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308906CF2532354900F5A643 /* SettingsViewController.swift */; };
@@ -29,6 +31,8 @@
 		302559812534966500D5EE57 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		30255985253496A900D5EE57 /* SettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocol.swift; sourceTree = "<group>"; };
 		30255988253496CE00D5EE57 /* SettingsFavoritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFavoritesModel.swift; sourceTree = "<group>"; };
+		303EF5F62544823100F68C29 /* SectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		307CD1712541BE260095C660 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		308906C82532354900F5A643 /* ProgramatticUISleepSettings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgramatticUISleepSettings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		308906CB2532354900F5A643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		308906CD2532354900F5A643 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 				3025597A253495EC00D5EE57 /* SleepSettingsTableViewCell.swift */,
 				302559742534931200D5EE57 /* SwitchSettingsTableViewCell.swift */,
 				30255977253495DA00D5EE57 /* FavoritesTableViewCell.swift */,
+				303EF5F62544823100F68C29 /* SectionHeaderTableViewCell.swift */,
 			);
 			path = SettingTableViewCells;
 			sourceTree = "<group>";
@@ -94,6 +99,7 @@
 				308906D62532354B00F5A643 /* LaunchScreen.storyboard */,
 				308906D92532354B00F5A643 /* Info.plist */,
 				308906CF2532354900F5A643 /* SettingsViewController.swift */,
+				307CD1712541BE260095C660 /* Extensions.swift */,
 				3025598B253496F100D5EE57 /* Model */,
 				302559802534961900D5EE57 /* SettingTableViewCells */,
 				3025597D2534960C00D5EE57 /* FavoritesCollectionViewCell.swift */,
@@ -170,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				303EF5F72544823100F68C29 /* SectionHeaderTableViewCell.swift in Sources */,
 				302559822534966500D5EE57 /* SettingsModel.swift in Sources */,
 				3025597E2534960C00D5EE57 /* FavoritesCollectionViewCell.swift in Sources */,
 				3025597B253495EC00D5EE57 /* SleepSettingsTableViewCell.swift in Sources */,
@@ -179,6 +186,7 @@
 				308906CC2532354900F5A643 /* AppDelegate.swift in Sources */,
 				30255986253496A900D5EE57 /* SettingsProtocol.swift in Sources */,
 				302559752534931200D5EE57 /* SwitchSettingsTableViewCell.swift in Sources */,
+				307CD1722541BE260095C660 /* Extensions.swift in Sources */,
 				308906CE2532354900F5A643 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
