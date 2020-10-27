@@ -9,6 +9,9 @@ import UIKit
 
 class FavoritesTableViewCell: UITableViewCell {
 
+    // TODO: Add access indicators (public/private)
+    // Group private/public methods and add // MARK: indicators
+    // Fix indentation
     var collectionView: UICollectionView!
     var favoritesDataSource = [SettingsFavoritesModel]()
     
@@ -36,6 +39,7 @@ class FavoritesTableViewCell: UITableViewCell {
         self.collectionView.reloadData()
     }
     
+    // Move to setupUI
     private func configureCollectionView() {
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
         let frame = CGRect(x: 0.0, y: 0.0, width: contentView.frame.width, height: contentView.frame.height)
@@ -49,6 +53,7 @@ class FavoritesTableViewCell: UITableViewCell {
         collectionView.register(FavoritesCollectionViewCell.self, forCellWithReuseIdentifier: "favoritesCell")
     }
     
+    // Rename method
     private func setCollectionViewConstraints() {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
@@ -60,6 +65,7 @@ class FavoritesTableViewCell: UITableViewCell {
 }
 
 extension FavoritesTableViewCell: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return favoritesDataSource.count
     }
@@ -72,15 +78,16 @@ extension FavoritesTableViewCell: UICollectionViewDataSource {
         return cell
     }
     
-    
 }
 
 extension FavoritesTableViewCell: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let favorite = favoritesDataSource[indexPath.row]
         let selectedFavorite = favorite.action
         selectedFavorite()
     }
+    
 }
 
 extension FavoritesTableViewCell: UICollectionViewDelegateFlowLayout {
@@ -90,4 +97,5 @@ extension FavoritesTableViewCell: UICollectionViewDelegateFlowLayout {
         let size = favorite.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17.0, weight: .regular)])
         return CGSize(width: size.width, height: 50.0)
     }
+    
 }

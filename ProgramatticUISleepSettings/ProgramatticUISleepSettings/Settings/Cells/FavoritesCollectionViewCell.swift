@@ -9,6 +9,8 @@ import UIKit
 
 class FavoritesCollectionViewCell: UICollectionViewCell {
     
+    // TODO: Add access indicators (public/private)
+    // Group private/public methods and add // MARK: indicators
     var favoritesLabel = UILabel()
     
     override init(frame: CGRect) {
@@ -32,12 +34,14 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         favoritesLabel.text = model.title
     }
     
+    // TODO: Move this in setupUI
     private func configureFavoritesLabel() {
         favoritesLabel.textColor = .white
         favoritesLabel.font = .systemFont(ofSize: 17.0)
         favoritesLabel.textAlignment = .center
     }
     
+    // TODO: Rename method to setupConstraints
     private func configureFavoritesLabelConstraints() {
         favoritesLabel.translatesAutoresizingMaskIntoConstraints = false
         

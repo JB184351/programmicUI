@@ -9,6 +9,9 @@ import UIKit
 
 class SwitchSettingsTableViewCell: UITableViewCell {
     
+    // TODO: Add access indicators (public/private)
+    // Group private/public methods and add // MARK: indicators
+    // Fix indentation
     var settingsLabel = UILabel()
     var detailSettingsLabel = UILabel()
     var settingsSwitch = UISwitch()
@@ -38,6 +41,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
         configureDetailSettingStackView()
     }
     
+    // Move this to setupUI
     private func configureMainSettingStackView() {
         mainSettingsStackView.axis = .horizontal
         mainSettingsStackView.alignment = .fill
@@ -60,6 +64,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
         mainSettingsStackView.addArrangedSubview(settingsSwitch)
     }
     
+    // Move this to setupUI
     private func configureDetailSettingStackView() {
         self.contentView.addSubview(detailStackView)
         
@@ -74,6 +79,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
         setupConstraintsForDetailStackView()
     }
     
+    // Rename method
     private func setupConstraintsForDetailStackView() {
         detailStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
         detailStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true

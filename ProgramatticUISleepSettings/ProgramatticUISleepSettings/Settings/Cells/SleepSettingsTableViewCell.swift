@@ -9,6 +9,9 @@ import UIKit
 
 class SleepSettingsTableViewCell: UITableViewCell {
 
+    // TODO: Add access indicators (public/private)
+    // Group private/public methods and add // MARK: indicators
+    // Fix indentation
     var settingsLabel = UILabel()
     var detailSettingsLabel = UILabel()
     var statusLabel = UILabel()
@@ -41,6 +44,7 @@ class SleepSettingsTableViewCell: UITableViewCell {
         setupDetailStackView()
     }
     
+    // TODO: Do this in setupUI not separate method
     private func setupDetailStackView() {
         detailStackView.axis = .vertical
         detailStackView.alignment = .fill
@@ -56,7 +60,7 @@ class SleepSettingsTableViewCell: UITableViewCell {
         setupDetailStackViewConstraints()
     }
     
-    
+    // TODO: Rename method
    private func setupDetailStackViewConstraints() {
         detailStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         detailStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true
@@ -64,6 +68,7 @@ class SleepSettingsTableViewCell: UITableViewCell {
         detailStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
     }
     
+    // TODO: Do this in setupUI not separate method
   private func setupMainSettingsStackView() {
         mainSettingsStackView.axis = .horizontal
         mainSettingsStackView.alignment = .fill

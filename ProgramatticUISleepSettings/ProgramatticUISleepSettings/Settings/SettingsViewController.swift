@@ -9,6 +9,8 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    // TODO: Add access indicators (public/private)
+    // Group private/public methods and add // MARK: indicators
     var tableView = UITableView()
     var sleepLabel = UILabel()
     var settingsDataSource = [[SettingsProtocol]]()
@@ -127,7 +129,6 @@ class SettingsViewController: UIViewController {
             print("Audio Fusion")
         }
         
-        
         let zeroSection = [newFavorite]
         settingsDataSource.append(zeroSection)
         
@@ -140,7 +141,6 @@ class SettingsViewController: UIViewController {
         let thirdSection = [ratings, audioFusion]
         settingsDataSource.append(thirdSection)
     }
-    
     
 }
 
@@ -179,10 +179,10 @@ extension SettingsViewController: UITableViewDataSource {
         }
     }
     
-    
 }
 
 extension SettingsViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let setting = settingsDataSource[indexPath.section][indexPath.row] as! SettingsModel
         let selectedSetting = setting.action
@@ -220,5 +220,6 @@ extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
 }
 

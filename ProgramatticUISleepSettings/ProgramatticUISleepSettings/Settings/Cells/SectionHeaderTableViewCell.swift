@@ -9,6 +9,9 @@ import UIKit
 
 class SectionHeaderTableViewCell: UITableViewCell {
     
+    // TODO: Add access indicators (public/private)
+    // Group private/public methods and add // MARK: indicators
+    // Fix indentation
     var sectionHeaderLabel = UILabel()
     var sectionHeaderStackView = UIStackView()
     var leftView = UIView()
@@ -24,7 +27,6 @@ class SectionHeaderTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-        
         sectionHeaderStackView.translatesAutoresizingMaskIntoConstraints = false
         leftView.translatesAutoresizingMaskIntoConstraints = false
         rightView.translatesAutoresizingMaskIntoConstraints = false
@@ -35,8 +37,8 @@ class SectionHeaderTableViewCell: UITableViewCell {
         configureUIElements()
     }
     
+    // Move to setupUI
     private func configureUIElements() {
-
         leftView.backgroundColor = .lightGray
         
         sectionHeaderLabel.textColor = UIColor(red: 194/255, green: 171/255, blue: 111/255, alpha: 1)
@@ -53,8 +55,8 @@ class SectionHeaderTableViewCell: UITableViewCell {
         configureUIElementConstraints()
     }
     
+    // Move to setupUI
     private func configureStackView() {
-        
         sectionHeaderStackView.axis = .horizontal
         sectionHeaderStackView.alignment = .center
         sectionHeaderStackView.distribution = .fill
@@ -62,6 +64,7 @@ class SectionHeaderTableViewCell: UITableViewCell {
         sectionHeaderStackView.contentMode = .scaleToFill
     }
     
+    // Rename method
     private func configureUIElementConstraints() {
         leftView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         leftView.widthAnchor.constraint(equalTo: rightView.widthAnchor).isActive = true
@@ -70,6 +73,7 @@ class SectionHeaderTableViewCell: UITableViewCell {
         rightView.heightAnchor.constraint(equalTo: leftView.heightAnchor).isActive = true
     }
     
+    // Rename method
     private func configureStackViewConstraints() {
         sectionHeaderStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
         sectionHeaderStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
