@@ -13,6 +13,7 @@ class FavoritesTableViewCell: UITableViewCell {
     var favoritesDataSource = [SettingsFavoritesModel]()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         configureCollectionView()
@@ -28,11 +29,13 @@ class FavoritesTableViewCell: UITableViewCell {
     }
     
     func setup(with model: [SettingsFavoritesModel]) {
+        
         self.favoritesDataSource = model
         self.collectionView.reloadData()
     }
     
     func configureCollectionView() {
+        
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
         let frame = CGRect(x: 0.0, y: 0.0, width: contentView.frame.width, height: contentView.frame.height)
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)
@@ -46,13 +49,13 @@ class FavoritesTableViewCell: UITableViewCell {
     }
     
     func setCollectionViewConstraints() {
+        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
-    
 }
 
 extension FavoritesTableViewCell: UICollectionViewDataSource {
@@ -67,12 +70,11 @@ extension FavoritesTableViewCell: UICollectionViewDataSource {
         cell.setup(with: favorite)
         return cell
     }
-    
-    
 }
 
 extension FavoritesTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let favorite = favoritesDataSource[indexPath.row]
         let selectedFavorite = favorite.action
         selectedFavorite()
@@ -82,6 +84,7 @@ extension FavoritesTableViewCell: UICollectionViewDelegate {
 extension FavoritesTableViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let favorite = favoritesDataSource[indexPath.row].title!
         let size = favorite.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17.0, weight: .regular)])
         return CGSize(width: size.width, height: 50.0)

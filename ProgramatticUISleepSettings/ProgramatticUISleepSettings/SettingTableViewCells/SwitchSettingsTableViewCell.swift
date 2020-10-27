@@ -16,6 +16,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
     var detailStackView = UIStackView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupUI()
     }
@@ -25,11 +26,13 @@ class SwitchSettingsTableViewCell: UITableViewCell {
     }
     
     func setup(with model: SettingsModel) {
+        
         settingsLabel.text = model.setting
         detailSettingsLabel.text = model.settingDetails
     }
     
     func setupUI() {
+        
         self.contentView.backgroundColor = UIColor(red: 17/255, green: 22/255, blue: 38/255, alpha: 1)
         
         detailStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -62,6 +65,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
     }
     
     func configureDetailSettingStackView() {
+        
         self.contentView.addSubview(detailStackView)
         
         detailStackView.axis = .vertical
@@ -76,6 +80,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
     }
     
     func setupConstraintsForDetailStackView() {
+        
         detailStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
         detailStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         detailStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true

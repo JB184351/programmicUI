@@ -30,6 +30,7 @@ class SectionHeaderTableViewCell: UITableViewCell {
         rightView.translatesAutoresizingMaskIntoConstraints = false
         
         self.contentView.addSubview(sectionHeaderStackView)
+        
         configureStackView()
         configureStackViewConstraints()
         configureUIElements()
@@ -38,13 +39,12 @@ class SectionHeaderTableViewCell: UITableViewCell {
     func configureUIElements() {
 
         leftView.backgroundColor = .lightGray
+        rightView.backgroundColor = .lightGray
         
         sectionHeaderLabel.textColor = UIColor(red: 194/255, green: 171/255, blue: 111/255, alpha: 1)
         sectionHeaderLabel.font = .systemFont(ofSize: 18)
         sectionHeaderLabel.textAlignment = .center
         sectionHeaderLabel.numberOfLines = 1
-        
-        rightView.backgroundColor = .lightGray
         
         sectionHeaderStackView.addArrangedSubview(leftView)
         sectionHeaderStackView.addArrangedSubview(sectionHeaderLabel)
@@ -63,6 +63,7 @@ class SectionHeaderTableViewCell: UITableViewCell {
     }
     
     func configureUIElementConstraints() {
+        
         leftView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         leftView.widthAnchor.constraint(equalTo: rightView.widthAnchor).isActive = true
         

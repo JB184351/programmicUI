@@ -16,6 +16,7 @@ class SleepSettingsTableViewCell: UITableViewCell {
     var detailStackView = UIStackView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupUI()
     }
@@ -31,6 +32,7 @@ class SleepSettingsTableViewCell: UITableViewCell {
     }
     
     func setupUI() {
+        
         contentView.backgroundColor = UIColor(red: 17/255, green: 22/255, blue: 38/255, alpha: 1)
         
         detailStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,6 +44,7 @@ class SleepSettingsTableViewCell: UITableViewCell {
     }
     
     func setupDetailStackView() {
+        
         detailStackView.axis = .vertical
         detailStackView.alignment = .fill
         detailStackView.distribution = .fill
@@ -58,6 +61,7 @@ class SleepSettingsTableViewCell: UITableViewCell {
     
     
     func setupDetailStackViewConstraints() {
+        
         detailStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         detailStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true
         detailStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
@@ -65,6 +69,7 @@ class SleepSettingsTableViewCell: UITableViewCell {
     }
     
     func setupMainSettingsStackView() {
+        
         mainSettingsStackView.axis = .horizontal
         mainSettingsStackView.alignment = .fill
         mainSettingsStackView.distribution = .equalCentering
@@ -80,9 +85,6 @@ class SleepSettingsTableViewCell: UITableViewCell {
         statusLabel.textColor = UIColor(red: 194/255, green: 171/255, blue: 111/255, alpha: 1)
         statusLabel.font = .systemFont(ofSize: 16.0)
         
-        
         detailStackView.addArrangedSubview(mainSettingsStackView)
     }
-    
-    
 }
