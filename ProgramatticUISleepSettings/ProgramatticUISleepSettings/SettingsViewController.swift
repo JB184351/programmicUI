@@ -25,11 +25,10 @@ class SettingsViewController: UIViewController {
         
         registerCells()
         setupUI()
-        setupConstraints()
         createSettingObjects()
     }
     
-    func setupUI() {
+    private func setupUI() {
         view.addSubview(sleepLabel)
         view.addSubview(tableView)
         
@@ -39,9 +38,11 @@ class SettingsViewController: UIViewController {
         sleepLabel.text = "Sleep Settings"
         sleepLabel.textAlignment = .center
         sleepLabel.textColor = .white
+        
+        setupConstraints()
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         sleepLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
         sleepLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         sleepLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
@@ -53,15 +54,14 @@ class SettingsViewController: UIViewController {
         
     }
     
-    func registerCells() {
+    private func registerCells() {
         tableView.register(SwitchSettingsTableViewCell.self, forCellReuseIdentifier: "switchCell")
         tableView.register(SleepSettingsTableViewCell.self, forCellReuseIdentifier: "sleepCell")
         tableView.register(FavoritesTableViewCell.self, forCellReuseIdentifier: "favoritesCell")
         tableView.register(SectionHeaderTableViewCell.self, forCellReuseIdentifier: "sectionCell")
     }
     
-    func createSettingObjects() {
-        
+    private func createSettingObjects() {
         let newFavorite = SettingsFavoritesModel(title: "+ New Favorite") {
             let addedFavorite = SettingsFavoritesModel(title: "Newer Favorite") {
                 print("added")

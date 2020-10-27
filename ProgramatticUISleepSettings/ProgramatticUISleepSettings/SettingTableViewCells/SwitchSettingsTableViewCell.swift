@@ -17,19 +17,19 @@ class SwitchSettingsTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.setupUI()
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(with model: SettingsModel) {
+    public func setup(with model: SettingsModel) {
         settingsLabel.text = model.setting
         detailSettingsLabel.text = model.settingDetails
     }
     
-    func setupUI() {
+    private func setupUI() {
         self.contentView.backgroundColor = UIColor(red: 17/255, green: 22/255, blue: 38/255, alpha: 1)
         
         detailStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,8 +38,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
         configureDetailSettingStackView()
     }
     
-    func configureMainSettingStackView() {
-        
+    private func configureMainSettingStackView() {
         mainSettingsStackView.axis = .horizontal
         mainSettingsStackView.alignment = .fill
         mainSettingsStackView.distribution = .equalCentering
@@ -61,7 +60,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
         mainSettingsStackView.addArrangedSubview(settingsSwitch)
     }
     
-    func configureDetailSettingStackView() {
+    private func configureDetailSettingStackView() {
         self.contentView.addSubview(detailStackView)
         
         detailStackView.axis = .vertical
@@ -75,7 +74,7 @@ class SwitchSettingsTableViewCell: UITableViewCell {
         setupConstraintsForDetailStackView()
     }
     
-    func setupConstraintsForDetailStackView() {
+    private func setupConstraintsForDetailStackView() {
         detailStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
         detailStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         detailStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true

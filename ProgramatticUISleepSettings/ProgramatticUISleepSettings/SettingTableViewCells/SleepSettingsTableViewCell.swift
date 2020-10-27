@@ -17,20 +17,20 @@ class SleepSettingsTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.setupUI()
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(with model: SettingsModel) {
+    public func setup(with model: SettingsModel) {
         settingsLabel.text = model.setting
         detailSettingsLabel.text = model.settingDetails
         statusLabel.text = model.settingStatus! + " >"
     }
     
-    func setupUI() {
+    private func setupUI() {
         contentView.backgroundColor = UIColor(red: 17/255, green: 22/255, blue: 38/255, alpha: 1)
         
         detailStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,7 +41,7 @@ class SleepSettingsTableViewCell: UITableViewCell {
         setupDetailStackView()
     }
     
-    func setupDetailStackView() {
+    private func setupDetailStackView() {
         detailStackView.axis = .vertical
         detailStackView.alignment = .fill
         detailStackView.distribution = .fill
@@ -57,14 +57,14 @@ class SleepSettingsTableViewCell: UITableViewCell {
     }
     
     
-    func setupDetailStackViewConstraints() {
+   private func setupDetailStackViewConstraints() {
         detailStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         detailStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true
         detailStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
         detailStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
     }
     
-    func setupMainSettingsStackView() {
+  private func setupMainSettingsStackView() {
         mainSettingsStackView.axis = .horizontal
         mainSettingsStackView.alignment = .fill
         mainSettingsStackView.distribution = .equalCentering
@@ -83,6 +83,5 @@ class SleepSettingsTableViewCell: UITableViewCell {
         
         detailStackView.addArrangedSubview(mainSettingsStackView)
     }
-    
     
 }

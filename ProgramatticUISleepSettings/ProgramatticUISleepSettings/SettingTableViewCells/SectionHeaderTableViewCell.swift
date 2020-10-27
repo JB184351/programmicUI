@@ -23,7 +23,7 @@ class SectionHeaderTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupUI() {
+    private func setupUI() {
         
         sectionHeaderStackView.translatesAutoresizingMaskIntoConstraints = false
         leftView.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +35,7 @@ class SectionHeaderTableViewCell: UITableViewCell {
         configureUIElements()
     }
     
-    func configureUIElements() {
+    private func configureUIElements() {
 
         leftView.backgroundColor = .lightGray
         
@@ -53,7 +53,7 @@ class SectionHeaderTableViewCell: UITableViewCell {
         configureUIElementConstraints()
     }
     
-    func configureStackView() {
+    private func configureStackView() {
         
         sectionHeaderStackView.axis = .horizontal
         sectionHeaderStackView.alignment = .center
@@ -62,7 +62,7 @@ class SectionHeaderTableViewCell: UITableViewCell {
         sectionHeaderStackView.contentMode = .scaleToFill
     }
     
-    func configureUIElementConstraints() {
+    private func configureUIElementConstraints() {
         leftView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         leftView.widthAnchor.constraint(equalTo: rightView.widthAnchor).isActive = true
         
@@ -70,11 +70,11 @@ class SectionHeaderTableViewCell: UITableViewCell {
         rightView.heightAnchor.constraint(equalTo: leftView.heightAnchor).isActive = true
     }
     
-    func configureStackViewConstraints() {
-        
+    private func configureStackViewConstraints() {
         sectionHeaderStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
         sectionHeaderStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
         sectionHeaderStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         sectionHeaderStackView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
     }
+    
 }

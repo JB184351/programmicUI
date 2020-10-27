@@ -15,10 +15,8 @@ class FavoritesTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        configureCollectionView()
-        contentView.addSubview(collectionView)
-        setCollectionViewConstraints()
-        
+        setupUI()
+    
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
     }
@@ -27,12 +25,18 @@ class FavoritesTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(with model: [SettingsFavoritesModel]) {
+    private func setupUI() {
+        configureCollectionView()
+        contentView.addSubview(collectionView)
+        setCollectionViewConstraints()
+    }
+    
+    public func setup(with model: [SettingsFavoritesModel]) {
         self.favoritesDataSource = model
         self.collectionView.reloadData()
     }
     
-    func configureCollectionView() {
+    private func configureCollectionView() {
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
         let frame = CGRect(x: 0.0, y: 0.0, width: contentView.frame.width, height: contentView.frame.height)
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)
@@ -45,7 +49,7 @@ class FavoritesTableViewCell: UITableViewCell {
         collectionView.register(FavoritesCollectionViewCell.self, forCellWithReuseIdentifier: "favoritesCell")
     }
     
-    func setCollectionViewConstraints() {
+    private func setCollectionViewConstraints() {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
