@@ -55,10 +55,10 @@
 			isa = PBXGroup;
 			children = (
 				3025597D2534960C00D5EE57 /* FavoritesCollectionViewCell.swift */,
-				3025597A253495EC00D5EE57 /* SleepSettingsTableViewCell.swift */,
-				302559742534931200D5EE57 /* SwitchSettingsTableViewCell.swift */,
 				30255977253495DA00D5EE57 /* FavoritesTableViewCell.swift */,
 				303EF5F62544823100F68C29 /* SectionHeaderTableViewCell.swift */,
+				3025597A253495EC00D5EE57 /* SleepSettingsTableViewCell.swift */,
+				302559742534931200D5EE57 /* SwitchSettingsTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -66,9 +66,9 @@
 		3025598B253496F100D5EE57 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				30255988253496CE00D5EE57 /* SettingsFavoritesModel.swift */,
 				302559812534966500D5EE57 /* SettingsModel.swift */,
 				30255985253496A900D5EE57 /* SettingsProtocol.swift */,
-				30255988253496CE00D5EE57 /* SettingsFavoritesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -92,8 +92,8 @@
 		308906CA2532354900F5A643 /* ProgramatticUISleepSettings */ = {
 			isa = PBXGroup;
 			children = (
-				C56CBE9325486E0C007DF5C8 /* Supporting Files */,
 				C56CBE9525486E2B007DF5C8 /* Settings */,
+				C56CBE9325486E0C007DF5C8 /* Supporting Files */,
 			);
 			path = ProgramatticUISleepSettings;
 			sourceTree = "<group>";
@@ -114,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				308906CF2532354900F5A643 /* SettingsViewController.swift */,
-				3025598B253496F100D5EE57 /* Models */,
 				302559802534961900D5EE57 /* Cells */,
+				3025598B253496F100D5EE57 /* Models */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
