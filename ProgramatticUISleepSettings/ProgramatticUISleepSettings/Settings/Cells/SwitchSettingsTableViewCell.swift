@@ -72,15 +72,15 @@ class SwitchSettingsTableViewCell: UITableViewCell {
     
     detailStackView.addArrangedSubview(mainSettingsStackView)
     detailStackView.addArrangedSubview(detailSettingsLabel)
-    setConstraintsForDetailStackView()
     
+    setupConstraints()
   }
   
   //==================================================
   // MARK: - Setting Constraints
   //==================================================
   
-  private func setConstraintsForDetailStackView() {
+  private func setupConstraints() {
     detailStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
     detailStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
     detailStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true

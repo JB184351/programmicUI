@@ -53,8 +53,6 @@ class SectionHeaderTableViewCell: UITableViewCell {
     sectionHeaderStackView.spacing = 20.0
     sectionHeaderStackView.contentMode = .scaleToFill
     
-    setupConstraintsForSectionHeaderStackView()
-    
     leftView.backgroundColor = .lightGray
     
     sectionHeaderLabel.textColor = UIColor(red: 194/255, green: 171/255, blue: 111/255, alpha: 1)
@@ -68,26 +66,24 @@ class SectionHeaderTableViewCell: UITableViewCell {
     sectionHeaderStackView.addArrangedSubview(sectionHeaderLabel)
     sectionHeaderStackView.addArrangedSubview(rightView)
     
-    setupConstraintsForViews()
+    setupConstraints()
   }
   
   //==================================================
   // MARK: - Setting Constraints
   //==================================================
   
-  private func setupConstraintsForViews() {
+  private func setupConstraints() {
+    sectionHeaderStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
+    sectionHeaderStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
+    sectionHeaderStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+    sectionHeaderStackView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+    
     leftView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     leftView.widthAnchor.constraint(equalTo: rightView.widthAnchor).isActive = true
     
     rightView.widthAnchor.constraint(equalTo: leftView.widthAnchor).isActive = true
     rightView.heightAnchor.constraint(equalTo: leftView.heightAnchor).isActive = true
-  }
-  
-  private func setupConstraintsForSectionHeaderStackView() {
-    sectionHeaderStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-    sectionHeaderStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
-    sectionHeaderStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-    sectionHeaderStackView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
   }
   
 }
