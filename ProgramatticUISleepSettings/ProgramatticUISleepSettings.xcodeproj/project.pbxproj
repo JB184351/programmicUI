@@ -92,6 +92,7 @@
 		308906CA2532354900F5A643 /* ProgramatticUISleepSettings */ = {
 			isa = PBXGroup;
 			children = (
+				308906D92532354B00F5A643 /* Info.plist */,
 				C56CBE9525486E2B007DF5C8 /* Settings */,
 				C56CBE9325486E0C007DF5C8 /* Supporting Files */,
 			);
@@ -101,7 +102,6 @@
 		C56CBE9325486E0C007DF5C8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				308906D92532354B00F5A643 /* Info.plist */,
 				308906CB2532354900F5A643 /* AppDelegate.swift */,
 				308906CD2532354900F5A643 /* SceneDelegate.swift */,
 				308906D42532354B00F5A643 /* Assets.xcassets */,

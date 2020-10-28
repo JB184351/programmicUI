@@ -9,12 +9,14 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-    // TODO: Add access indicators (public/private)
-    // Group private/public methods and add // MARK: indicators
-    var tableView = UITableView()
-    var sleepLabel = UILabel()
-    var settingsDataSource = [[SettingsProtocol]]()
+    private var tableView = UITableView()
+    private var sleepLabel = UILabel()
+    private var settingsDataSource = [[SettingsProtocol]]()
     
+  //==================================================
+  // MARK: - Setup Methods
+  //==================================================
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -144,6 +146,10 @@ class SettingsViewController: UIViewController {
     
 }
 
+//==================================================
+// MARK: - TableView DataSource
+//==================================================
+
 extension SettingsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -180,6 +186,10 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
 }
+
+//==================================================
+// MARK: - TableView Delegate
+//==================================================
 
 extension SettingsViewController: UITableViewDelegate {
     
@@ -220,6 +230,6 @@ extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
+
 }
 

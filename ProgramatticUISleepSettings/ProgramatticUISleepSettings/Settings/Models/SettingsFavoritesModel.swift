@@ -8,6 +8,6 @@
 import Foundation
 
 struct SettingsFavoritesModel: SettingsProtocol {
-    var title: String?
-    var action: () -> Void
+  var title: String?
+  var action: () -> Void
 }

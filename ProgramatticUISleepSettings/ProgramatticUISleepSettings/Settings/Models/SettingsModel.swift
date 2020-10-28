@@ -8,14 +8,14 @@
 import Foundation
 
 enum SettingsCellType {
-    case button
-    case label
+  case button
+  case label
 }
 
 struct SettingsModel: SettingsProtocol {
-    var setting: String
-    var settingDetails: String?
-    var settingStatus: String?
-    var cellType: SettingsCellType
-    var action: () -> Void
+  var setting: String
+  var settingDetails: String?
+  var settingStatus: String?
+  var cellType: SettingsCellType
+  var action: () -> Void
 }
