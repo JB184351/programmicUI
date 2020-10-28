@@ -14,7 +14,7 @@ class SettingsViewController: UIViewController {
   private var settingsDataSource = [[SettingsProtocol]]()
   
   //==================================================
-  // MARK: - Setup Methods
+  // MARK: - LifeCycle Method
   //==================================================
   
   override func viewDidLoad() {
@@ -31,6 +31,10 @@ class SettingsViewController: UIViewController {
     setupUI()
     createSettingObjects()
   }
+
+  //==================================================
+  // MARK: - Setup Methods
+  //==================================================
   
   private func setupUI() {
     view.addSubview(sleepLabel)
