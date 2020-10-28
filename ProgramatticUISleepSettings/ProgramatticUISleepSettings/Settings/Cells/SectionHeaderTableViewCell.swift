@@ -75,7 +75,7 @@ class SectionHeaderTableViewCell: UITableViewCell {
   // MARK: - Setting Constraints
   //==================================================
   
-  private func setConstraintsForViews() {
+  private func setConstraintsForViews() { // TODO: Rename to setupConstraints
     leftView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     leftView.widthAnchor.constraint(equalTo: rightView.widthAnchor).isActive = true
     
@@ -83,7 +83,7 @@ class SectionHeaderTableViewCell: UITableViewCell {
     rightView.heightAnchor.constraint(equalTo: leftView.heightAnchor).isActive = true
   }
   
-  private func setConstraintsForSectionHeaderStackView() {
+  private func setConstraintsForSectionHeaderStackView() { // TODO: Rename to setupConstraints
     sectionHeaderStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
     sectionHeaderStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
     sectionHeaderStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true

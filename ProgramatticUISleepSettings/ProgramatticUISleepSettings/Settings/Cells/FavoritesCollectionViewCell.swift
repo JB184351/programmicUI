@@ -44,11 +44,12 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
   }
   
   private func setupConstraints() {
-    favoritesLabel.translatesAutoresizingMaskIntoConstraints = false
+    favoritesLabel.translatesAutoresizingMaskIntoConstraints = false // TODO: Move this to setupUI
     
     favoritesLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
     favoritesLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     favoritesLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
     favoritesLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
   }
+  
 }

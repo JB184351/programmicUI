@@ -55,7 +55,7 @@ class FavoritesTableViewCell: UITableViewCell {
   }
   
   private func setConstraintsForCollectionView() {
-    collectionView.translatesAutoresizingMaskIntoConstraints = false
+    collectionView.translatesAutoresizingMaskIntoConstraints = false // TODO: Move this to setupUI
     collectionView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
     collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
     collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
