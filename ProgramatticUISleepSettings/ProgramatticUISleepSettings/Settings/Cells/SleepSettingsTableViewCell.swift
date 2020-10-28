@@ -71,10 +71,10 @@ class SleepSettingsTableViewCell: UITableViewCell {
     detailSettingsLabel.font = .systemFont(ofSize: 12)
     
     detailStackView.addArrangedSubview(detailSettingsLabel)
-    setConstraintsForDetailStackView()
+    setupConstraints()
   }
   
-  private func setConstraintsForDetailStackView() { // TODO: Rename to setupConstraints
+  private func setupConstraints() {
     detailStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
     detailStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true
     detailStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true

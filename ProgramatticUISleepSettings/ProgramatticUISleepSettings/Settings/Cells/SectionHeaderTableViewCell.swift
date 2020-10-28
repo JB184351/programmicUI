@@ -53,7 +53,7 @@ class SectionHeaderTableViewCell: UITableViewCell {
     sectionHeaderStackView.spacing = 20.0
     sectionHeaderStackView.contentMode = .scaleToFill
     
-    setConstraintsForSectionHeaderStackView()
+    setupConstraintsForSectionHeaderStackView()
     
     leftView.backgroundColor = .lightGray
     
@@ -68,14 +68,14 @@ class SectionHeaderTableViewCell: UITableViewCell {
     sectionHeaderStackView.addArrangedSubview(sectionHeaderLabel)
     sectionHeaderStackView.addArrangedSubview(rightView)
     
-    setConstraintsForViews()
+    setupConstraintsForViews()
   }
   
   //==================================================
   // MARK: - Setting Constraints
   //==================================================
   
-  private func setConstraintsForViews() { // TODO: Rename to setupConstraints
+  private func setupConstraintsForViews() {
     leftView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     leftView.widthAnchor.constraint(equalTo: rightView.widthAnchor).isActive = true
     
@@ -83,7 +83,7 @@ class SectionHeaderTableViewCell: UITableViewCell {
     rightView.heightAnchor.constraint(equalTo: leftView.heightAnchor).isActive = true
   }
   
-  private func setConstraintsForSectionHeaderStackView() { // TODO: Rename to setupConstraints
+  private func setupConstraintsForSectionHeaderStackView() {
     sectionHeaderStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
     sectionHeaderStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
     sectionHeaderStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true

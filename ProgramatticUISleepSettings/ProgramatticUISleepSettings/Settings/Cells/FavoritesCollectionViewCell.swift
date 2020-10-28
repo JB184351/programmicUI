@@ -36,6 +36,7 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
     favoritesLabel.textAlignment = .center
     self.addSubview(favoritesLabel)
     
+    favoritesLabel.translatesAutoresizingMaskIntoConstraints = false
     setupConstraints()
   }
   
@@ -44,8 +45,6 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
   }
   
   private func setupConstraints() {
-    favoritesLabel.translatesAutoresizingMaskIntoConstraints = false // TODO: Move this to setupUI
-    
     favoritesLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
     favoritesLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     favoritesLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
