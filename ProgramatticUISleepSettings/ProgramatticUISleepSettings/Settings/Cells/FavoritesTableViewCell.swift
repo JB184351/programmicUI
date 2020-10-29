@@ -99,6 +99,10 @@ extension FavoritesTableViewCell: UICollectionViewDelegate {
   
 }
 
+//==================================================
+// MARK: - Collection View DelegateFlowLayout
+//==================================================
+
 extension FavoritesTableViewCell: UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
