@@ -68,6 +68,10 @@ class SettingsViewController: UIViewController {
     tableView.register(SectionHeaderTableViewCell.self, forCellReuseIdentifier: "sectionCell")
   }
   
+  //==================================================
+  // MARK: - Populating Data Source
+  //==================================================
+  
   private func createSettingObjects() {
     let newFavorite = SettingsFavoritesModel(title: "+ New Favorite") {
       let addedFavorite = SettingsFavoritesModel(title: "Newer Favorite") {
