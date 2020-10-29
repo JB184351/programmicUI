@@ -28,6 +28,10 @@ class SleepSettingsTableViewCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
+  //==================================================
+  // MARK: - Setup
+  //==================================================
+  
   public func setup(with model: SettingsModel) {
     settingsLabel.text = model.setting
     detailSettingsLabel.text = model.settingDetails

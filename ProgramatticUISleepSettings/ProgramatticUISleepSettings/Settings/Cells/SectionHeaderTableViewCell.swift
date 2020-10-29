@@ -69,10 +69,6 @@ class SectionHeaderTableViewCell: UITableViewCell {
     setupConstraints()
   }
   
-  //==================================================
-  // MARK: - Setting Constraints
-  //==================================================
-  
   private func setupConstraints() {
     sectionHeaderStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
     sectionHeaderStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true

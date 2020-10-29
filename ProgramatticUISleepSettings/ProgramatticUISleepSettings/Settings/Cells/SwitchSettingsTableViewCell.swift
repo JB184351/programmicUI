@@ -76,10 +76,6 @@ class SwitchSettingsTableViewCell: UITableViewCell {
     setupConstraints()
   }
   
-  //==================================================
-  // MARK: - Setting Constraints
-  //==================================================
-  
   private func setupConstraints() {
     detailStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
     detailStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
